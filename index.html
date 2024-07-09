@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="loginindo.js"></script>
 </head>
 
 <body>
     <div class="navbar">
         <div class="logo"><a href="#"><img src="/Images/Co..png" alt=""></a></div>
-        <div class="header"><h1 class="Mainhead">Insurance Management System</h1></div>
+        <div class="header">
+            <h1 class="Mainhead">Insurance Management System</h1>
+        </div>
         <div class="switch">
             <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
             <label for="language-toggle"></label>
@@ -25,12 +27,14 @@
     <br>
     <div class="login-wrap">
         <h2>Login</h2>
-        <div class="form">
-            <input type="text" placeholder="Username" name="un" />
+        <form method="POST" class="login-form" action="/login">
+            <input type="text" class="login-user" placeholder="Username" name="un" />
             <input type="password" placeholder="Password" name="pw" />
-            <button>Sign in</button>
-            <a href="/Mainsection/Main.html"><p>Don't have an account? Register</p></a>
-        </div>
+            <button type="submit">Sign in</button>
+            <a href="/Mainsection/Main.html">
+                <p>Don't have an account? Register</p>
+            </a>
+        </form>
     </div>
 </body>
 <br>
@@ -46,4 +50,6 @@
         </div>
     </footer>
 </footer>
+<script src="loginindo.js"></script>
+
 </html>
