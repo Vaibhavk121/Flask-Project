@@ -1,0 +1,43 @@
+create database Insurance;
+use Insurance;
+
+create table Users(UserID INT PRIMARY KEY, Name VARCHAR(255) NOT NULL, Gender VARCHAR(2) NOT NULL, Phone.No INT NOT NULL, Address VARCHAR(255) NOT NULL, Email VARCHAR(255) NOT NULL);
+insert into Users(UserID, Name, Gender, Phone.No, Address, Email)values
+(3699,"Riddhima Kapoor", "F", 9561278451, "Budigere Cross, Bengaluru, Karnataka, India", "ridhhima.kapoor@gmail.com"),
+(5621,"Suchita Yadav", "F", 5632789125, "Whitefield, Bengaluru, Karnataka, India" , "suchita.yadav@gmail.com"), 
+(5648,"Sana Dutta", "F", 9763254193, "Yalanka, Bengaluru, Karnataka, India", "sana.dutta@gmail.com"),
+(2356,"Tushar Reddy", "M", 7845129221, "Rampura Cross, Bengaluru, Karnataka, India", "tushar.reddy@gmail.com")
+
+
+create table InsuranceDesc(InsuranceName VARCHAR(255) PRIMARY KEY, Details VARCHAR(255));
+insert into InsuranceDesc(InsuranceName, Details)values
+("Individual Health Insurance", "Annual Heath Check-ups for All Insured Members, Rewards for Your Good Health with No Claim Bonus, Comprehensive Coverage including AYUSH Treatment, Tax savings up to INR 75,000 u/s 80D" ),
+("1 Crore Health Insurance", "Sum Insured options to choose from 25 Lacs, 50Lacs or 1-6 Crores, Up to 50% No Claim Bonus, Coverage for Day care treatments, In-Patient Hospitalisation"),
+("Maternity Health Insurance", "Perfect Blend of Hospitalization and Maternity Insurance, New Born Baby Cover up to 90 Days, 10% Premium Discount on Multi-Year Policy, Coverage to 541 Day Care Treatments" ),
+("Heart Health Insurance", "Annual Heath Check-ups for All Insured Members, Rewards for Your Good Health with No Claim Bonus, Comprehensive Coverage including AYUSH Treatment, Tax savings up to INR 75,000 u/s 80D" );
+
+
+create table UserInsurance(UserID INT FORIEGN KEY, InsuranceName VARCHAR(255) FOREIGN KEY, JoiningDate DATE NOT NULL);
+insert into UserInsurance(UserID, InsuranceName ,JoiningDate)values
+(3699, "Individual Health Insurance", "16-12-2010"),
+(5621, "1 Crore Health Insurance", "03-01-2011"),
+(5648, "Maternity Health Insurance", "26-05-2015"),
+(2356, "Heart Health Insurance", "05-04-2009");
+
+
+create table Reminder(UserID INT FOREIGN KEY, InsuranceName VARCHAR(255) FOREIGN KEY, ExpireDate DATE);
+insert into Reminder(UserID, InsuranceName, ExpireDate)values
+(3699, "Individual Health Insurance", "20-07-2024"),
+(5648,  "Maternity Health Insurance", "01-08-2024");
+
+
+create table PaymentMode(UserID INT FOREIGN KEY, InsuranceName VARCHAR(255) FOREIGN KEY, PayMode VARCHAR(100));
+insert into PaymentMode(UserID, InsuranceName, PayMode)values
+(3699, "Individual Health Insurance", "Cash" ),
+(5621, "1 Crore Health Insurance", "UPI"),
+(5648, "Maternity Health Insurance", "Card"),
+(2356, "Heart Health Insurance", "UPI");
+
+
+
+
