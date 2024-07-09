@@ -10,10 +10,10 @@
 
 // These users "already exist"
 var users = [
-    { name: 'Suresh' },
-    { name: 'Shivangi' },
-    { name: 'Tanashree' },
-    { name: 'Vaibhav' }
+   'Suresh',
+   'Shivangi', 
+   'Tanashree',
+   'Vaibhav'
     ]
     
     var loginform = {
@@ -65,8 +65,10 @@ var users = [
         $html.find('button').html('Sign in');
         $html.find('a p').html("Don't have an account? Register");
       },
-      submitForm: function(){
-        // ajax to handle register or login
+      submitForm: function(e){
+        e.preventDefault
+        var user=document.querySelector(".loginuser").value
+        console.log(loginuser)
       }
       
     } // loginform {}
