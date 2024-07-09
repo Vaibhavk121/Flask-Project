@@ -83,7 +83,7 @@ loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
   if (users.includes(usernameInput.value)) {
     console.log("Logged in.");
-    window.location.replace("/main.html");
+    window.location.replace("file:///C:/Mainsection/Main.html");
   }
   console.log("ok")
 })
