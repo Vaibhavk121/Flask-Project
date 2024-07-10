@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurances</title>
+    <link rel="stylesheet" href="/Insurances/insurances.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><a href="/Mainsection/Main.html"><img src="/Images/Co..png" alt=""></a></div>
+        <div class="header"><h1 class="Mainhead">Health Insurances</h1></div>
+        <div class="switch">
+            <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+            <label for="language-toggle"></label>
+            <span class="on">EN</span>
+            <span class="off">HN</span>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br>    
+
+    <div class="content">
+        <h1 class="Tabletext">Insurance Data</h1>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Insurance Name</th>
+                <th>Details</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in results %}
+            <tr class="rowcontent">
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                {% comment %} <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td> {% endcomment %}
+                
+                <!-- Add more columns as per your table schema -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    </div>
+    
+</body>
+<br>
+        <br>
+        <br>
+        <footer>
+            <div class="footersection">
+                <div class="footercontent">
+                    <p>All rights reserved ©️©️</p>
+                    <p>💗 Made with love 💗</p>
+                    <p>By Shivangi, Tanashree ,Suresh and vaibhav</p>
+                </div>
+            </div>
+        </footer>
+</html>
