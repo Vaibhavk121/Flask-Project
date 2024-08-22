@@ -21,14 +21,16 @@ def get_db_connection():
     return connection
 
 @app.route('/')
-def index():
-    connection = get_db_connection()
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM users")
-    results = cursor.fetchall()
-    cursor.close()
-    connection.close()
-    return render_template('Users/users.html', results=results)
+# def index():
+#     connection = get_db_connection()
+#     cursor = connection.cursor()
+#     cursor.execute("SELECT * FROM users")
+#     results = cursor.fetchall()
+#     cursor.close()
+#     connection.close()
+#     return render_template('Users/users.html', results=results)
+def home():
+    return render_template('login/login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
